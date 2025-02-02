@@ -1,8 +1,11 @@
 import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
+import { ThemeProvider } from "@components/ThemeProvider";
+import ThemeSwitcher from "@components/ThemeSwitcher";
+
 export const metadata = {
-  title: "Promptopia",
+  title: "IdeaSpark",
   description: "Discover & Share AI Prompts",
   icons: {
     icon:
@@ -22,7 +25,9 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang='en'>
     <body>
+      <ThemeProvider>
       <Provider>
+
         <div className='main'>
           <div className='gradient' />
         </div>
@@ -31,7 +36,10 @@ const RootLayout = ({ children }) => (
           <Nav />
           {children}
         </main>
+        
       </Provider>
+      <ThemeSwitcher/>
+      </ThemeProvider>    
     </body>
   </html>
 );

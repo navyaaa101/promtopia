@@ -6,6 +6,7 @@ const UserSchema = new Schema({
         unique: [true, 'Email already exists!'],
         required: [true, 'Email is required!'],
     },
+
     username: {
         type: String,
         required: [true, 'Username is required!'],
@@ -14,12 +15,12 @@ const UserSchema = new Schema({
              "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"
          ]
     },
+    
     image: {
         type: String,
     }
 });
 
-// Define the User model using the schema
 const User = models.User || model("User", UserSchema);
 
 export default User;
